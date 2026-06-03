@@ -188,4 +188,4 @@
 - [ ] **Crear repo `ai-mockup-quickstart`** con: skill de Claude para Foundry CLI, snippet completo verificado (`foundry-cli-verification.md`), ejemplos de Python/Node, function calling, mini-agente, pattern del agente redactor de dummies. Bloqueante para que el link del slide 12 y 18 sea funcional antes del 12 de junio.
 - [ ] **Leer en voz alta** una vez para confirmar 30 min — solo Moshe puede hacer esto.
 
-**Commit:** (pendiente al cierre de la ronda)
+**Commit:** `05afa30`
