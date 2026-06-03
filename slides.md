@@ -193,8 +193,8 @@ layout: two-cols
 | **Project** | Contenedor de recursos | Tu workspace — uno por equipo |
 | **Model** | Un LLM disponible (gpt-4o, gpt-4o-mini, o3-mini) | Eliges cuál deployar (recomiendo gpt-4o-mini) |
 | **Deployment** | Un model con endpoint + quota | Lo que llamas desde tu código con la API key |
-| **Connection** | Link a otro recurso | Solo si necesitas RAG / storage |
-| **AI Search** | Index vectorial as-a-service | Raramente en 48h |
+| **Connection** | Link a otro recurso | Solo si usan AI Search o Blob. Si no, no la toquen. |
+| **AI Search** | Index vectorial as-a-service | Overkill en 48h. Pásenle los datos directamente al modelo. |
 
 <div class="mt-4 text-sm opacity-70">
   <strong>No tocan:</strong> Evaluations, Fine-tuning, Content Safety policies, custom roles.
@@ -206,19 +206,23 @@ layout: two-cols
 
 # Foundry — CLI > Consola
 
-La consola está hecha para clickear y explorar. **En 48h, cada click te quita 15 segundos.**
+La consola está hecha para clickear. **En 48h, cada click te quita 15 segundos.**
+
+¿No dominan `az`? **Pídanselo a un agente de código.** Claude / Cursor / Copilot lo maneja por ustedes — solo tienen que entender qué pedirle.
 
 ```bash
 az login
-az ai project create --name desafio-equipo-N
-az ai model deploy --model gpt-4o-mini --capacity 1
-# endpoint listo en ~90 segundos
+az extension add -n cognitiveservices
+# crear resource group → Foundry → deployar gpt-4o-mini
 ```
+
+📦 Snippet completo + skill de Claude para Foundry:
+[**github.com/moshe-exe/ai-mockup-quickstart**](https://github.com/moshe-exe/ai-mockup-quickstart)
 
 ### Dos reglas con G&S
 
-1. **Quota / permisos / accesos → al inge de G&S.** No peleen con la consola.
-2. **Todo lo creativo (modelos, prompts, lógica) → CLI o SDK.**
+1. **Quota, permisos, accesos → al inge de G&S.** No peleen con la consola.
+2. **Todo lo creativo → CLI o SDK.**
 
 ---
 
@@ -321,11 +325,13 @@ class: text-center
 
 # Las 3 reglas que te van a salvar
 
-<div class="text-2xl mt-8 space-y-4">
+<div class="text-xl mt-8 space-y-6 text-left max-w-3xl mx-auto">
 
-1. **Recorta el scope hasta que duela.**
-2. **Construye el demo path, no el producto.**
-3. **Despliega en la hora 12, no en la 47.**
+1. **Recorta con cabeza, aunque duela.** El miedo al dolor no es razón para no decidir bien.
+
+2. **Tu demo es lo que sobrevive al recorte.** Construye eso, nada más.
+
+3. **El deploy de la hora 12 no es para mostrar** — es para descubrir lo que no funciona mientras todavía hay tiempo.
 
 </div>
 
@@ -340,14 +346,8 @@ class: text-center
 
 <div class="mt-8 text-base">
 
-📦 Código + patterns:<br/>
-[github.com/moshe-exe/desafio-ia-bago-peru-2026-recursos](https://github.com/moshe-exe/desafio-ia-bago-peru-2026-recursos)
-
-<div class="mt-2 text-xs opacity-60">
-
-*(disponible al cierre de la presentación)*
-
-</div>
+📦 Toolkit + skill de Claude para Foundry:<br/>
+[github.com/moshe-exe/ai-mockup-quickstart](https://github.com/moshe-exe/ai-mockup-quickstart)
 
 </div>
 

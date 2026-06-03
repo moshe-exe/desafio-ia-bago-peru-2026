@@ -140,3 +140,52 @@
 - [ ] **Verificar tiempo real de la charla** — leerla en voz alta una vez antes de aprobar para confirmar que 18 slides caben en 30 min.
 
 **Commit:** `646f7bc`
+
+---
+
+## Ronda 3 — 2026-06-03 (pulido sobre pendientes de Ronda 2)
+
+**Foco:** resolver los 4 pendientes registrados al cierre de Ronda 2 sin alterar el conteo de slides (sigue en 18).
+
+### Cambios aplicados
+
+**Slide 11 (Foundry — lo mínimo) · postura sobre Connection y AI Search**
+- Filas reformuladas con la postura real de Moshe (era "neutral" en Ronda 1):
+  - `Connection`: *"Solo si usan AI Search o Blob. Si no, no la toquen."*
+  - `AI Search`: *"Overkill en 48h. Pásenle los datos directamente al modelo."*
+- Evitado deliberadamente el lenguaje técnico "embeddan los snippets en un prompt" — Moshe quería accesibilidad sobre precisión léxica.
+
+**Slide 12 (Foundry — CLI > Consola) · fix técnico crítico**
+- Hallazgo de agente verificador: los comandos `az ai project create` y `az ai model deploy` **no existen**. Si los participantes los pegaban, fallaban inmediatamente después de `az login`. El comando family correcto es `az cognitiveservices`, requiere extensión, resource group, etc.
+- Decisión: en lugar de meter el snippet completo (10+ líneas, denso), simplificar a 3 líneas de setup mínimo + delegar el snippet completo al repo de recursos (`ai-mockup-quickstart`).
+- Agregado el meta-mensaje: *"¿No dominan `az`? Pídanselo a un agente de código (Claude / Cursor / Copilot)."* — convierte la barrera técnica en oportunidad para que la audiencia use IA durante la hackatón.
+- Eliminada la promesa "endpoint en ~90 segundos" (la realidad es 1-2 min según docs oficiales).
+
+**Slide 17 (3 reglas) · Versión D — reescrita con lógica de fondo**
+- Las 3 reglas de Ronda 2 eran traducciones tipo-tagline del inglés con jerga ("demo path", "scope") y sonaban a tagline de marketing. Moshe pidió desempacar el razonamiento detrás de cada una y reformularlas con su voz.
+- Nuevas versiones:
+  1. *"Recorta con cabeza, aunque duela. El miedo al dolor no es razón para no decidir bien."* — énfasis en criterio, no en dramatismo (la versión anterior glorificaba el dolor).
+  2. *"Tu demo es lo que sobrevive al recorte. Construye eso, nada más."* — puente directo con la regla 1 (el recorte define la demo).
+  3. *"El deploy de la hora 12 no es para mostrar — es para descubrir lo que no funciona mientras todavía hay tiempo."* — antiintuitivo de arranque, framing real.
+- Layout cambiado de `text-2xl text-center` a `text-xl text-left max-w-3xl` por longitud de frases.
+
+**Slide 18 (Gracias) · repo de recursos atemporal**
+- Repo renombrado de `desafio-ia-bago-peru-2026-recursos` (específico al evento) a **`ai-mockup-quickstart`** (atemporal — sirve para cualquier hackatón / charla futura de Moshe).
+- Mención explícita de la **skill de Claude para Foundry** que vivirá dentro del toolkit.
+- Eliminada la nota "(disponible al cierre de la presentación)" — el repo debe existir antes del evento.
+
+### Feedback de Moshe (registrado)
+- *"Deja que un agente secundario haga el #2 [verificar comandos `az`], dispáralo y que escriba sus hallazgos en un archivo temporal."* → ejecutado, hallazgos en `.context/foundry-cli-verification.md`.
+- *"Sobre el punto 1, hagamos que el recurso sea atemporal y no específico de esta hackaton."* → renombrado a `ai-mockup-quickstart`.
+- *"#1 → ai-mockup-quickstart. #2 → B mantenemos la sugerencia de usar CLI porque los agentes de código pueden ayudar con el uso de la misma. En el toolkit habrá una skill para esto (Claude SKILLs)."*
+- *"En lugar de alabar hacer recortes drásticos, que sea dar énfasis a recortar con cabeza y sin miedo a que estos recortes puedan doler."*
+- *"[Sobre demo vs producto] esto es un puente desde la idea de recortes anterior. El objetivo de recortar es acotar el concepto de demo, de cierto modo."*
+- *"[Sobre deploy temprano] de acuerdo [con el insight como está]."*
+- *"[Sobre AI Search] está bien la recomendación, mantengámosla pero sin decir 'embedan los snippets en un prompt'."*
+
+### Pendientes que SOBREVIVEN a Ronda 3
+
+- [ ] **Crear repo `ai-mockup-quickstart`** con: skill de Claude para Foundry CLI, snippet completo verificado (`foundry-cli-verification.md`), ejemplos de Python/Node, function calling, mini-agente, pattern del agente redactor de dummies. Bloqueante para que el link del slide 12 y 18 sea funcional antes del 12 de junio.
+- [ ] **Leer en voz alta** una vez para confirmar 30 min — solo Moshe puede hacer esto.
+
+**Commit:** (pendiente al cierre de la ronda)
