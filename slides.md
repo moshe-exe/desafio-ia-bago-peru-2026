@@ -102,21 +102,31 @@ class: text-left
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 1 · El método</div>
 
+<div class="h-full flex flex-col justify-center max-w-5xl">
+
 # La regla #1: recorta hasta que duela
+
+<div class="mt-8 mb-10">
 
 > Si después de recortar el scope no sientes que perdiste algo importante, **no recortaste lo suficiente**.
 
+</div>
+
 <v-click>
 
-### El antipatrón
+<div class="grid grid-cols-[auto_1fr] gap-x-8 gap-y-6 mt-4 items-baseline">
 
-"Vamos a hacer una plataforma que..."
+<div class="text-sm uppercase tracking-widest opacity-60">Antipatrón</div>
+<div>"Vamos a hacer una plataforma que…"</div>
 
-### El patrón
+<div class="text-sm uppercase tracking-widest opacity-60">Patrón</div>
+<div>"Vamos a hacer <strong>una sola cosa</strong>: que el usuario pueda <em>[acción concreta]</em> y reciba <em>[resultado concreto]</em>."</div>
 
-"Vamos a hacer **una sola cosa**: que el usuario pueda *[acción concreta]* y reciba *[resultado concreto]*."
+</div>
 
 </v-click>
+
+</div>
 
 ---
 
@@ -277,7 +287,7 @@ No te enamores de la primera idea. **Enamórate del problema, no de la solución
 
 La consola está hecha para clickear. **En 48h, cada click te quita 15 segundos.**
 
-¿No dominan `az`? **Pídanselo a un agente de código.** Claude / Cursor / Copilot lo maneja por ustedes — solo tienen que entender qué pedirle.
+¿No dominan `az`? **Pídanselo a un agente de código** — Claude, Cursor o Copilot lo manejan por ustedes.
 
 ```bash
 az login
@@ -285,13 +295,17 @@ az extension add -n cognitiveservices
 # crear resource group → Foundry → deployar gpt-4o-mini
 ```
 
-📦 Snippet completo + skill de Claude para Foundry:
+Snippet completo + skill de Claude para Foundry:
 [**github.com/moshe-exe/ai-mockup-quickstart**](https://github.com/moshe-exe/ai-mockup-quickstart)
 
-### Dos reglas con G&S
+<div class="mt-8 text-sm uppercase tracking-widest opacity-60">Dos reglas con G&S</div>
+
+<div class="mt-2 space-y-1">
 
 1. **Quota, permisos, accesos → al inge de G&S.** No peleen con la consola.
 2. **Todo lo creativo → CLI o SDK.**
+
+</div>
 
 ---
 
@@ -307,38 +321,55 @@ az extension add -n cognitiveservices
 | **Trampa** | Requiere pensar bien el flow antes de codear | Jurado puede confundirse — hay que **mostrar el thinking** |
 
 ---
+layout: two-cols
+---
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
 
+<div class="h-full flex flex-col justify-center pr-6">
+
 # No es blanco o negro
 
-<div class="text-center text-xl mt-4 mb-4 font-mono">
+<div class="text-xl mt-8 font-mono text-center">
 
-Workflow ━━━━━━━━━━━━━━━━━━━━━━ Agente
+Workflow ━━━━━━━━━━━━━━ Agente
 
 </div>
 
-<div class="text-center text-sm opacity-70 mb-8">
+<div class="text-sm opacity-70 mt-2 mb-8 text-center">
 
-↑ evidente · *("loguear síntoma")*   |   ↑ evidente · *("explica mi diagnóstico")*
+↑ *("loguear síntoma")*   |   ↑ *("explica mi diagnóstico")*
 
 </div>
 
 Para arrancar, pregúntate: *"¿Qué decisión tiene que tomar mi sistema?"*
 
+<div class="mt-4 space-y-1">
+
 - Si cabe en un `if/else` → **workflow**
 - Si cambia según el contexto → **agente**
 
+</div>
+
+</div>
+
+::right::
+
 <v-click>
+
+<div class="h-full flex flex-col justify-center pl-6 text-base space-y-4">
 
 En la mayoría de casos, el extremo correcto es obvio.
 
 Pero **en salud, la zona gris aparece seguido**:
+
 - una decisión puede ser **clínica** (estructurada) y **conversacional** (ambigua) a la vez,
 - el input del paciente llega libre, pero la respuesta no puede serlo,
 - la auditabilidad pesa.
 
 Cuando te encuentres ahí, **no la sobrepienses**. El siguiente slide te va a sesgar.
+
+</div>
 
 </v-click>
 
@@ -398,13 +429,43 @@ class: text-center
 
 # Las 3 reglas que te van a salvar
 
-<div class="text-xl mt-8 space-y-6 text-left max-w-3xl mx-auto">
+<div class="mt-12 text-left max-w-3xl mx-auto space-y-10">
 
-1. **Recorta con cabeza, aunque duela.** El miedo al dolor no es razón para no decidir bien.
+<div>
 
-2. **Tu demo es lo que sobrevive al recorte.** Construye eso, nada más.
+**1. Recorta con cabeza, aunque duela.**
 
-3. **El deploy de la hora 12 no es para mostrar** — es para descubrir lo que no funciona mientras todavía hay tiempo.
+<div class="text-base opacity-80 mt-1 pl-6">
+
+El miedo al dolor no es razón para no decidir bien.
+
+</div>
+
+</div>
+
+<div>
+
+**2. Tu demo es lo que sobrevive al recorte.**
+
+<div class="text-base opacity-80 mt-1 pl-6">
+
+Construye eso, nada más.
+
+</div>
+
+</div>
+
+<div>
+
+**3. El deploy de la hora 12 no es para mostrar.**
+
+<div class="text-base opacity-80 mt-1 pl-6">
+
+Es para descubrir lo que no funciona mientras todavía hay tiempo.
+
+</div>
+
+</div>
 
 </div>
 
@@ -415,17 +476,23 @@ class: text-center
 
 # Gracias
 
-## ¿Preguntas?
+<div class="mt-6 text-2xl opacity-80">¿Preguntas?</div>
 
-<div class="mt-8 text-base">
+<div class="mt-16 text-base">
 
-📦 Toolkit + skill de Claude para Foundry:<br/>
+Toolkit + skill de Claude para Foundry<br/>
 [github.com/moshe-exe/ai-mockup-quickstart](https://github.com/moshe-exe/ai-mockup-quickstart)
 
 </div>
 
-<div class="mt-8 text-lg">
+<div class="mt-10 text-lg">
 
-[github.com/moshe-exe](https://github.com/moshe-exe) · Agentman · Mentorium
+[github.com/moshe-exe](https://github.com/moshe-exe)
+
+</div>
+
+<div class="mt-4 text-base opacity-80">
+
+Agentman · Mentorium
 
 </div>

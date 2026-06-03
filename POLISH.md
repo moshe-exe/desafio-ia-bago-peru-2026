@@ -1,12 +1,12 @@
 # Polish — desafio-ia-bago-peru-2026
 
-**Estado:** in-progress
+**Estado:** completed
 **Iniciado:** 2026-06-03
 **Última actualización:** 2026-06-03
 **Slides totales:** 18
-**Slides polished:** 9 / 18
-**Criterios al momento:** 18 (C1-C13 + N1-N5)
-**Fase actual:** Phase 1 completed (Tier A criteria) — Phase 2 pending (Tier B)
+**Slides polished:** 14 / 18 (4 "no-changes" confirmed positive patterns)
+**Criterios al momento:** 22 (C1-C13 + N1-N9)
+**Fase actual:** Phase 2 completed — pase completo terminado
 
 Screenshots capturados con `npm run export -- --format png --output polish/` y renombrados a `NN-before.png`.
 
@@ -21,19 +21,19 @@ Screenshots capturados con `npm run export -- --format png --output polish/` y r
 | 03 | Qué les voy a contar | polished | Phase 1 |
 | 04 | El objetivo | no-changes | (P1 confirmed) |
 | 05 | Mapa del talk | polished | Phase 1 |
-| 06 | La regla #1: recorta hasta que duela | pending | Phase 2 |
+| 06 | La regla #1: recorta hasta que duela | polished | Phase 2 |
 | 07 | Las 48 horas en 4 bloques | polished | Phase 1 |
 | 08 | Cuándo cambiar de rumbo | polished | Phase 1 |
 | 09 | Hardcode estratégico | polished | Phase 1 |
 | 10 | Stack mínimo · mockup en 48h | polished | Phase 1 |
 | 11 | Foundry — lo mínimo para 48h | no-changes | (P2 confirmed) |
-| 12 | Foundry — CLI > Consola | pending | Phase 2 |
+| 12 | Foundry — CLI > Consola | polished | Phase 2 |
 | 13 | Agente vs Workflow · cómo se ve cada mockup | no-changes | (P2 confirmed) |
-| 14 | No es blanco o negro | pending | Phase 2 |
+| 14 | No es blanco o negro | polished | Phase 2 |
 | 15 | El insight contraintuitivo | no-changes | — |
 | 16 | Top errores · y cómo evitarlos | polished | Phase 1 |
-| 17 | Las 3 reglas que te van a salvar | pending | Phase 2 |
-| 18 | Gracias | pending | Phase 2 |
+| 17 | Las 3 reglas que te van a salvar | polished | Phase 2 |
+| 18 | Gracias | polished | Phase 2 |
 
 ---
 
@@ -99,11 +99,31 @@ Edits: emojis ❌/✅ removidos; headers reemplazados por `<span class="th-err">
 
 ---
 
-### Diferidos a Phase 2 (Tier B criteria)
+### Phase 2 — Tier B criteria (N6-N9)
 
-Slides que dependen de criterios N6-N10 (Tier B), pendientes de adopción:
-- Slide 06 (mini-labels para h3, N6)
-- Slide 12 (remove emoji 📦, cortar cola redundante N7)
-- Slide 14 (diagrama+texto agrupados, N9)
-- Slide 17 (numeración tabular-nums)
-- Slide 18 (remove emoji 📦, separar categorías link N8)
+Aplicados después de la revisión de Phase 1.
+
+**Slide 06 — La regla #1: recorta hasta que duela**
+Antes: `polish/06-before.png` · Después: `polish/06-after.png`
+Criterios: C1, C2, C3, C5, N6.
+Edits: wrap en `<div class="h-full flex flex-col justify-center max-w-5xl">`; callout con `mt-8 mb-10`; h3 "El antipatrón"/"El patrón" reemplazados por mini-labels en grid `label / value` (uppercase, tracking-widest, opacity-60).
+
+**Slide 12 — Foundry — CLI > Consola**
+Antes: `polish/12-before.png` · Después: `polish/12-after.png`
+Criterios: C2, C5, C12, N7.
+Edits: 📦 emoji removido; coletilla "— solo tienen que entender qué pedirle" cortada (N7); h3 "Dos reglas con G&S" reemplazado por mini-label uppercase tracking-widest (N6).
+
+**Slide 14 — No es blanco o negro**
+Antes: `polish/14-before.png` · Después: `polish/14-after.png`
+Criterios: C1, C3, C7, N9.
+Edits: layout cambiado a `two-cols`; col izq con diagrama + prompt diagnóstico + bullets de criterio agrupados (N9 — todo junto, no en reveal); col der con `v-click` revealing "salud zona gris".
+
+**Slide 17 — Las 3 reglas que te van a salvar**
+Antes: `polish/17-before.png` · Después: `polish/17-after.png`
+Criterios: C1, C2, C11.
+Edits: lista reescrita con estructura "titular bold en línea 1 / descripción no-bold en línea 2 indentada"; cada ítem en su propio div con `space-y-10`. Ritmo visual predecible, sin huérfanos.
+
+**Slide 18 — Gracias**
+Antes: `polish/18-before.png` · Después: `polish/18-after.png`
+Criterios: C1, C6, C12, C13, N8.
+Edits: 📦 removido; "## ¿Preguntas?" reemplazado por `<div class="text-2xl opacity-80">` (evita h2 compitiendo con h1); 3 bloques distintos en jerarquía descendente (toolkit / github personal / empresas).
