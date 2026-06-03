@@ -5,8 +5,8 @@
 **Última actualización:** 2026-06-03
 **Slides totales:** 18
 **Slides polished:** 14 / 18 (4 "no-changes" confirmed positive patterns)
-**Criterios al momento:** 22 (C1-C13 + N1-N9)
-**Fase actual:** Phase 2 completed — pase completo terminado
+**Criterios al momento:** 23 (C1-C13 + N1-N10) + 2 patrones positivos (P1, P2)
+**Fase actual:** completed — Phase 1 (Tier A), Phase 2 (Tier B), iteración slides 12/14, N10 derivado. Tier C revisado y descartado (redundante/rechazado/out-of-scope).
 
 Screenshots capturados con `npm run export -- --format png --output polish/` y renombrados a `NN-before.png`.
 
