@@ -1,0 +1,19 @@
+{
+  "source": "https://coolors.co/43012a-cd3ade-fc32ac-ad096b-91234a",
+  "notes": "White added as bg — palette is decorative; restraint rule: vivid colors only via explicit classes.",
+  "colors": {
+    "Crimson Violet":    "#43012A",
+    "Vivid Orchid":      "#CD3ADE",
+    "Brilliant Rose":    "#FC32AC",
+    "Medium Violet Red": "#AD096B",
+    "Vintage Berry":     "#91234A",
+    "White":             "#FFFFFF"
+  },
+  "roles": {
+    "bg":         "White",
+    "fg":         "Crimson Violet",
+    "primary":    "Medium Violet Red",
+    "primary-dk": "Vintage Berry",
+    "accent":     "Brilliant Rose"
+  }
+}
