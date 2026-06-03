@@ -66,4 +66,4 @@
 - [ ] **Caja del agente (4 componentes)** — eliminado en Ronda 1. Decidir si vuelve o no.
 - [ ] **Las 3 reglas de cierre** — revisar si reflejan correctamente los nuevos énfasis (datos dummy, HITL, etc.).
 
-**Commit:** (pendiente al cierre de la ronda)
+**Commit:** `0cc5c2d`
