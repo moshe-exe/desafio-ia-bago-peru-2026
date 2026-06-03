@@ -285,9 +285,15 @@ No te enamores de la primera idea. **Enamórate del problema, no de la solución
 
 # Foundry — CLI > Consola
 
+<div class="mt-6 space-y-2">
+
 La consola está hecha para clickear. **En 48h, cada click te quita 15 segundos.**
 
 ¿No dominan `az`? **Pídanselo a un agente de código** — Claude, Cursor o Copilot lo manejan por ustedes.
+
+</div>
+
+<div class="mt-10">
 
 ```bash
 az login
@@ -295,15 +301,24 @@ az extension add -n cognitiveservices
 # crear resource group → Foundry → deployar gpt-4o-mini
 ```
 
-Snippet completo + skill de Claude para Foundry:
-[**github.com/moshe-exe/ai-mockup-quickstart**](https://github.com/moshe-exe/ai-mockup-quickstart)
+<div class="mt-2 text-sm opacity-90">
 
-<div class="mt-8 text-sm uppercase tracking-widest opacity-60">Dos reglas con G&S</div>
+Snippet completo + skill de Claude para Foundry: [**github.com/moshe-exe/ai-mockup-quickstart**](https://github.com/moshe-exe/ai-mockup-quickstart)
 
-<div class="mt-2 space-y-1">
+</div>
+
+</div>
+
+<div class="mt-12">
+
+<div class="text-sm uppercase tracking-widest opacity-60">Dos reglas con G&S</div>
+
+<div class="mt-3 space-y-2">
 
 1. **Quota, permisos, accesos → al inge de G&S.** No peleen con la consola.
 2. **Todo lo creativo → CLI o SDK.**
+
+</div>
 
 </div>
 
@@ -326,28 +341,35 @@ layout: two-cols
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
 
-<div class="h-full flex flex-col justify-center pr-6">
+<div class="h-full flex flex-col justify-center pr-8">
 
 # No es blanco o negro
 
-<div class="text-xl mt-8 font-mono text-center">
+<div class="mt-8">
 
-Workflow ━━━━━━━━━━━━━━ Agente
+<div class="flex items-center text-lg font-mono">
+  <span class="font-bold">Workflow</span>
+  <div class="flex-1 mx-3 border-t-2 border-current opacity-60"></div>
+  <span class="font-bold">Agente</span>
+</div>
+
+<div class="mt-2 flex justify-between text-xs opacity-70 italic">
+  <span>("loguear síntoma")</span>
+  <span>("explica mi diagnóstico")</span>
+</div>
 
 </div>
 
-<div class="text-sm opacity-70 mt-2 mb-8 text-center">
+<div class="mt-10">
 
-↑ *("loguear síntoma")*   |   ↑ *("explica mi diagnóstico")*
+Pregúntate: *"¿Qué decisión tiene que tomar mi sistema?"*
 
-</div>
-
-Para arrancar, pregúntate: *"¿Qué decisión tiene que tomar mi sistema?"*
-
-<div class="mt-4 space-y-1">
+<div class="mt-3 space-y-1">
 
 - Si cabe en un `if/else` → **workflow**
 - Si cambia según el contexto → **agente**
+
+</div>
 
 </div>
 
@@ -357,17 +379,25 @@ Para arrancar, pregúntate: *"¿Qué decisión tiene que tomar mi sistema?"*
 
 <v-click>
 
-<div class="h-full flex flex-col justify-center pl-6 text-base space-y-4">
+<div class="h-full flex flex-col justify-center pl-8 text-sm space-y-3">
 
-En la mayoría de casos, el extremo correcto es obvio.
+<div class="text-xs uppercase tracking-widest opacity-60">La zona gris (en salud)</div>
 
-Pero **en salud, la zona gris aparece seguido**:
+En la mayoría de casos, el extremo correcto es obvio. Pero **en salud, la zona gris aparece seguido**:
+
+<div class="space-y-1">
 
 - una decisión puede ser **clínica** (estructurada) y **conversacional** (ambigua) a la vez,
 - el input del paciente llega libre, pero la respuesta no puede serlo,
 - la auditabilidad pesa.
 
+</div>
+
+<div class="italic opacity-85">
+
 Cuando te encuentres ahí, **no la sobrepienses**. El siguiente slide te va a sesgar.
+
+</div>
 
 </div>
 
