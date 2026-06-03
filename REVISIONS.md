@@ -139,4 +139,4 @@
 - [ ] **Las 3 reglas de cierre (slide 17)** — confirmar que reflejan los énfasis nuevos de Ronda 1 (dummies, HITL, etc.) o re-craft.
 - [ ] **Verificar tiempo real de la charla** — leerla en voz alta una vez antes de aprobar para confirmar que 18 slides caben en 30 min.
 
-**Commit:** (pendiente al cierre de la ronda)
+**Commit:** `646f7bc`
