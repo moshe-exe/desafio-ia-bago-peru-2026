@@ -1,0 +1,12 @@
+/*
+ * Workaround para bug en Slidev 0.49.x:
+ * El diálogo "Goto" (presionar `g`) mueve su contenedor a -top-20 (-80px) cuando está cerrado,
+ * pero la lista de autocompletado interna (~720px de alto con 24 slides) se renderiza igual
+ * mientras `result.length > 0`, quedando visible permanentemente en pantalla.
+ *
+ * Solución: ocultar el contenedor cuando está en estado cerrado (clase `-top-20`).
+ */
+#slidev-goto-dialog[class~="-top-20"] {
+  visibility: hidden;
+  pointer-events: none;
+}
