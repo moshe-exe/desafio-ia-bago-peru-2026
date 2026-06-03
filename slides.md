@@ -12,9 +12,17 @@ transition: slide-left
 mdc: true
 ---
 
-# Cómo construir un producto de IA Generativa<br/>en menos de 48 horas
+<div class="h-full flex flex-col items-center justify-center text-center">
 
-**Desafío IA Bagó Perú 2026** · Moshe Ojeda · 12 jun 2026
+# Cómo construir un producto<br/>de IA Generativa en menos de 48 horas
+
+<div class="mt-10 text-lg opacity-75 tracking-wide">
+
+Desafío IA Bagó Perú 2026 · Moshe Ojeda · 12 jun 2026
+
+</div>
+
+</div>
 
 <div class="abs-br m-6 text-xl">
   <a href="https://github.com/moshe-exe/desafio-ia-bago-peru-2026" target="_blank" class="slidev-icon-btn">
@@ -23,24 +31,42 @@ mdc: true
 </div>
 
 ---
+layout: center
+class: text-left
+---
 
 # Quién soy
 
+<div class="mt-6 pl-2 space-y-5 text-lg">
+
 **Moshe Ojeda**
+
+<div class="pl-4 space-y-4">
 
 Soy **cofundador de Agentman**, donde desplegamos agentes para **healthcare**.
 
 Y también **cofundador de Mentorium**, donde ofrecemos **IA para instituciones educativas**.
 
+</div>
+
+</div>
+
+---
+layout: center
+class: text-left
 ---
 
 # Qué les voy a contar
+
+<div class="mt-10 space-y-6 pl-4 max-w-4xl text-lg">
 
 Voy a contarles, muy concretamente, **qué haría yo si estuviera en su lugar** estas 48 horas.
 
 **Por qué** tomaría cada decisión.
 
 Y **cómo aplico esto mismo en mi día a día** en Agentman y Mentorium.
+
+</div>
 
 ---
 layout: center
@@ -58,12 +84,19 @@ class: text-center
 Lo demás es criterio.
 
 ---
+layout: center
+class: text-left
+---
 
 # Mapa del talk
+
+<div class="mt-10 pl-6 space-y-5 text-lg">
 
 1. **El método** — cómo organizar las 48h
 2. **La arquitectura** — qué construir
 3. **Los errores** — qué evitar
+
+</div>
 
 ---
 
@@ -91,6 +124,8 @@ Lo demás es criterio.
 
 # Las 48 horas en 4 bloques
 
+<div class="slide-07-table mt-6">
+
 | Bloque | Horas | Objetivo |
 |--------|-------|----------|
 | **0. Decidir** | 0 – 4h | Reto elegido, "demo line" en una oración, lista explícita de lo que **NO** van a construir |
@@ -98,33 +133,53 @@ Lo demás es criterio.
 | **2. Pulir lógica** | 20 – 36h | Iterar el corazón de la interacción (prompts, tools, flujo). Calidad solo sobre el *happy path*. |
 | **3. Demo + pitch** | 36 – 48h | UI presentable, **grabar video backup**, ensayar pitch 3 veces |
 
+</div>
+
 ---
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 1 · El método</div>
 
+<div class="h-full flex flex-col justify-center max-w-4xl">
+
 # Cuándo cambiar de rumbo
 
-**Dos checkpoints, dos reglas:**
+<div class="text-base opacity-60 mb-10">Dos checkpoints, dos reglas.</div>
 
 <v-click>
+
+<div class="mb-10">
 
 **Hora 12 — ¿corre el end-to-end con dummies?**
 
-Si **NO** → no es problema de tecnología, es de **scope**. **Recorta más.** No cambies de stack.
+<div class="mt-2 opacity-90">
+
+Si **NO** → no es problema de tecnología, es de **scope**. Recorta más. No cambies de stack.
+
+</div>
+
+</div>
 
 </v-click>
 
 <v-click>
+
+<div class="mb-12">
 
 **Hora 24 — ¿la dirección sigue viable?**
 
-Si **NO** → **pivota.** Duele — ya invertiste horas — pero **pivotar antes de la hora 24 es barato. Después es caro.**
+<div class="mt-2 opacity-90">
+
+Si **NO** → **pivota**. Duele — ya invertiste horas — pero pivotar antes de la hora 24 es barato. Después es caro.
+
+</div>
+
+</div>
 
 </v-click>
 
 <v-click>
 
-<div class="mt-8 text-lg italic opacity-80 text-center">
+<div class="mt-4 text-lg italic opacity-75 text-center">
 
 No te enamores de la primera idea. **Enamórate del problema, no de la solución.**
 
@@ -132,13 +187,17 @@ No te enamores de la primera idea. **Enamórate del problema, no de la solución
 
 </v-click>
 
----
-layout: two-cols
+</div>
+
 ---
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 1 · El método</div>
 
 # Hardcode estratégico
+
+<div class="grid grid-cols-2 gap-12 mt-8">
+
+<div>
 
 **Hardcodea lo que no aporta a la demo.**
 
@@ -147,7 +206,9 @@ layout: two-cols
 - Resultados intermedios "no-IA"
 - Configuración
 
-::right::
+</div>
+
+<div>
 
 **Construye de verdad lo que vende la idea.**
 
@@ -156,13 +217,19 @@ layout: two-cols
 - El output que el jurado va a ver
 - El flujo que cuentas en el pitch
 
-<div class="mt-6 text-sm opacity-70">
+</div>
+
+<div class="col-span-2 mt-6 text-sm opacity-70 text-center">
   El jurado no le da puntos a tu sistema de auth.
+</div>
+
 </div>
 
 ---
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
+
+<div class="h-full flex flex-col justify-center">
 
 # Stack mínimo · mockup en 48h
 
@@ -181,6 +248,8 @@ layout: two-cols
 </div>
 
 </v-click>
+
+</div>
 
 ---
 
@@ -306,7 +375,9 @@ En 48 horas, **"menos código que escribir"**<br/>gana a **"más óptimo en prod
 
 # Top errores · y cómo evitarlos
 
-| ❌ Error | ✅ Cómo evitarlo |
+<div class="errors-table mt-8">
+
+| <span class="th-err">Error</span> | <span class="th-fix">Cómo evitarlo</span> |
 |----------|------------------|
 | Construir **features** en vez de la demo | **Una sola persona** dueña de la demo |
 | Querer **"datos médicos reales"** | **Dummies + agente redactor** (30 min vs 8h) |
@@ -314,7 +385,9 @@ En 48 horas, **"menos código que escribir"**<br/>gana a **"más óptimo en prod
 | Olvidar al **human-in-the-loop** | *"El agente sugiere, el médico aprueba con un click"* |
 | **Deploy tarde** | **Deploy en la hora 12**, no en la 47 |
 
-<div class="mt-6 text-sm opacity-70 text-center">
+</div>
+
+<div class="mt-8 text-sm opacity-70 text-center">
   Otros: trunk-based dev · graba video backup en hora 40 · ensaya el pitch 3 veces
 </div>
 

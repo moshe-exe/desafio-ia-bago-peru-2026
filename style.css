@@ -10,3 +10,71 @@
   visibility: hidden;
   pointer-events: none;
 }
+
+/* ============================================================
+ * Polish — Phase 1 (Tier A criteria)
+ * Added during the first /slides polish pass on this deck.
+ * ============================================================ */
+
+/* Slide 1 — cover: title doesn't dominate (C4), deliberate title↔meta gap (C6),
+ * meta in uniform weight (N1 — no bold-vs-muted mix on sibling pieces). */
+.cover-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+.cover-block h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin: 0;
+}
+.cover-meta {
+  margin-top: 2.5rem;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: var(--c-fg);
+  opacity: 0.75;
+}
+
+/* Slide 7 — fixed column widths so wrap is consistent (C10 + N3). */
+.slide-07-table table { table-layout: fixed; width: 100%; }
+.slide-07-table th:nth-child(1),
+.slide-07-table td:nth-child(1) { width: 22%; white-space: nowrap; }
+.slide-07-table th:nth-child(2),
+.slide-07-table td:nth-child(2) { width: 13%; white-space: nowrap; }
+.slide-07-table th:nth-child(3),
+.slide-07-table td:nth-child(3) { width: 65%; }
+.slide-07-table td {
+  vertical-align: top;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+/* Slide 10 — sparse block centered vertically (C1). */
+.slide-center {
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slide-center h1 { margin-bottom: 2rem; }
+
+/* Slide 16 — semantic headers via type, not glyphs (C12 + N5). */
+.errors-table .th-err,
+.errors-table .th-fix {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.errors-table .th-err { color: var(--c-primary); }
+.errors-table .th-fix { color: var(--c-fg); }
+.errors-table .th-err::before {
+  content: "× ";
+  font-feature-settings: "tnum";
+  opacity: 0.85;
+}
+.errors-table .th-fix::before {
+  content: "✓ ";
+  opacity: 0.85;
+}
