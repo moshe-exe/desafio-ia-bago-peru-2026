@@ -23,56 +23,39 @@ mdc: true
 </div>
 
 ---
-layout: image-right
-image: https://avatars.githubusercontent.com/u/moshe-exe
----
 
 # Quién soy
 
 **Moshe Ojeda**
 
-- Co-founder en **Agentman** — agentes de IA para retail y healthcare
-- Antes: **Yape** (producto), **Rappi** (growth + producto)
-- 10+ años construyendo software en entornos de alto impacto
-- Hoy: agentes que reemplazan flujos enteros, no botones
+Soy **cofundador de Agentman**, donde desplegamos agentes para **healthcare**.
 
-<div class="mt-8 opacity-70 text-sm">
-  Hablo desde el "lo he hecho, me ha salido mal, lo volvería a hacer".
-</div>
+Y también **cofundador de Mentorium**, donde ofrecemos **IA para instituciones educativas**.
+
+---
+
+# Qué les voy a contar
+
+Voy a contarles, muy concretamente, **qué haría yo si estuviera en su lugar** estas 48 horas.
+
+**Por qué** tomaría cada decisión.
+
+Y **cómo aplico esto mismo en mi día a día** en Agentman y Mentorium.
 
 ---
 layout: center
 class: text-center
 ---
 
-# La pregunta
+# El objetivo
 
-## ¿Se puede construir un producto de IA<br/>en 48 horas?
+<div class="text-3xl mt-8 mb-8">
 
-<v-click>
+**Container local + API key de IA = mockup competente.**
 
-### Sí. Pero "producto" no significa lo que crees.
+</div>
 
-</v-click>
-
----
-
-# Lo que NO es construir un producto en 48h
-
-- ❌ Un MVP listo para producción
-- ❌ Algo escalable a 10k usuarios
-- ❌ Algo con auth, billing, observability, tests, etc.
-- ❌ "El próximo Notion + IA"
-
-<v-click>
-
-### Lo que **sí** es:
-
-- ✅ **Una demo end-to-end** que un usuario real pueda tocar
-- ✅ **Un slice vertical** que prueba la hipótesis central
-- ✅ **Una historia** que se cuenta en 5 minutos y se entiende
-
-</v-click>
+Lo demás es criterio.
 
 ---
 layout: section
@@ -98,11 +81,11 @@ layout: section
 
 <v-click>
 
-### El antipatrón:
+### El antipatrón
 
 "Vamos a hacer una plataforma que..."
 
-### El patrón:
+### El patrón
 
 "Vamos a hacer **una sola cosa**: que el usuario pueda *[acción concreta]* y reciba *[resultado concreto]*."
 
@@ -114,38 +97,51 @@ layout: section
 
 | Bloque | Horas | Objetivo |
 |--------|-------|----------|
-| **0. Diseño** | 0 – 6h | Definir la **demo killer**: una sola interacción que vende la idea |
-| **1. Slice vertical** | 6 – 24h | End-to-end **feo pero funcional**. Sin pulir. |
-| **2. Datos reales + iteración** | 24 – 40h | Cambiar mocks por datos reales. Pulir prompts. |
-| **3. Story + deploy** | 40 – 48h | Pulir flujo de demo, desplegar, ensayar pitch |
+| **0. Decidir** | 0 – 4h | Reto elegido, "demo line" en una oración, lista explícita de lo que **NO** van a construir |
+| **1. Esqueleto** | 4 – 20h | Container local + API + LLM + UI mínima → **end-to-end con dummies**, todo hardcoded. **Deploy en la hora 12.** |
+| **2. Pulir lógica** | 20 – 36h | Iterar el corazón de la interacción (prompts, tools, flujo). Calidad solo sobre el *happy path*. |
+| **3. Demo + pitch** | 36 – 48h | UI presentable, **grabar video backup**, ensayar pitch 3 veces |
 
-<v-click>
+---
+layout: center
+class: text-center
+---
 
-<div class="mt-4 text-sm opacity-70">
-  Si en la hora 24 no tienes algo que corra end-to-end, <strong>cambia de problema</strong>.
+# Regla heurística
+
+<div class="text-2xl mt-8">
+
+> "Si en la hora 12 no tienes el end-to-end corriendo con dummies, **no es un problema de tecnología — es de scope**. No cambies de stack. Recorta más."
+
 </div>
-
-</v-click>
 
 ---
 
-# La regla del "demo path"
+# Pivotar
 
-Una **sola línea recta** desde input → output. Sin bifurcaciones.
-
-```mermaid
-graph LR
-  A[Usuario hace X] --> B[Sistema responde Y]
-  B --> C[Wow moment]
-```
+Cambiar la dirección de tu solución cuando descubres que la actual no va a llegar.
 
 <v-click>
 
-### Lo que **no** está en el demo path:
-- Auth real → hardcode un usuario
-- Onboarding → entra directo al wow moment
-- Settings, perfil, historial → no existen
-- Manejo de errores → "happy path" o nada
+**Duele.** Ya invertiste horas. Tu cerebro va a inventar razones para no hacerlo.
+
+</v-click>
+
+<v-click>
+
+### Regla pragmática
+
+**Pivotar antes de la hora 24 es barato. Después es caro.**
+
+</v-click>
+
+<v-click>
+
+<div class="mt-8 text-lg italic opacity-80">
+
+No te enamores de la primera idea. **Enamórate del problema, no de la solución.**
+
+</div>
 
 </v-click>
 
@@ -183,20 +179,19 @@ layout: section
 
 ---
 
-# Stack mínimo Gen AI · 2026
+# Stack mínimo · mockup en 48h
 
-| Capa | Opción rápida | Opción "Azure Foundry" |
-|------|---------------|------------------------|
-| **Frontend** | Streamlit / Next.js | Next.js en Azure Static Web Apps |
-| **Backend** | FastAPI / Express | FastAPI en Azure Container Apps |
-| **LLM** | gpt-4o / Claude / Llama | Modelos en Azure AI Foundry |
-| **Memoria/RAG** | SQLite + embeddings | Azure AI Search |
-| **Almacenamiento** | archivos locales | Azure Blob / Cosmos DB |
-| **Deploy** | Vercel + Render | Azure Container Apps |
+| Capa | Qué usar |
+|------|----------|
+| **Frontend** | Lo más simple — Streamlit, una página HTML, lo que sea |
+| **Backend** | FastAPI o Express en container local |
+| **LLM** | `gpt-4o-mini` en Azure AI Foundry |
+| **Datos** | Dummies en JSON / SQLite / archivos |
+| **Deploy** | Local primero. Azure Container Apps si llegan. |
 
 <v-click>
 
-<div class="mt-4 text-sm opacity-70">
+<div class="mt-6 text-sm opacity-70">
   <strong>Regla:</strong> elige el stack que ya conoces. El hackatón no es para aprender Kubernetes.
 </div>
 
@@ -204,86 +199,104 @@ layout: section
 
 ---
 
-# Agentes vs. workflows
+# Foundry — lo mínimo para 48h
 
-```mermaid
-graph TD
-  Q{¿Los pasos son predecibles<br/>de antemano?}
-  Q -- Sí --> W[Workflow:<br/>código + LLM en pasos fijos]
-  Q -- No --> A{¿Necesita decidir<br/>qué herramienta usar?}
-  A -- Sí --> AG[Agente con tools]
-  A -- No --> P[Solo prompt]
+| Concepto | Qué es | Para qué lo tocas |
+|----------|--------|-------------------|
+| **Project** | Contenedor de recursos | Tu workspace — uno por equipo |
+| **Model** | Un LLM disponible (gpt-4o, gpt-4o-mini, o3-mini) | Eliges cuál deployar (recomiendo gpt-4o-mini) |
+| **Deployment** | Un model con endpoint + quota | Lo que llamas desde tu código con la API key |
+| **Connection** | Link a otro recurso | Solo si necesitas RAG / storage |
+| **AI Search** | Index vectorial as-a-service | Raramente en 48h |
+
+<div class="mt-4 text-sm opacity-70">
+  <strong>No tocan:</strong> Evaluations, Fine-tuning, Content Safety policies, custom roles.
+</div>
+
+---
+
+# Foundry — CLI > Consola
+
+La consola está hecha para clickear y explorar. **En 48h, cada click te quita 15 segundos.**
+
+```bash
+az login
+az ai project create --name desafio-equipo-N
+az ai model deploy --model gpt-4o-mini --capacity 1
+# endpoint listo en ~90 segundos
 ```
+
+### Dos reglas con G&S
+
+1. **Quota / permisos / accesos → al inge de G&S.** No peleen con la consola.
+2. **Todo lo creativo (modelos, prompts, lógica) → CLI o SDK.**
+
+---
+
+# Agente vs Workflow · cómo se ve cada mockup
+
+| | **Workflow** | **Agente** |
+|---|---|---|
+| **UI típica** | Formularios, botones, stepper "paso 2/4" | Chat libre + panel "thinking..." con tool calls |
+| **Ejemplo healthcare** | Paciente loguea síntoma → eval contra reglas → respuesta | Médico pide *"resúmeme la última consulta"* → agente decide tools |
+| **Cómo se ve la demo** | "Primero X, luego Y" — jurado entiende fácil | El "wow" es mostrar el razonamiento en vivo |
+| **Trampa** | Requiere pensar bien el flow antes de codear | Jurado puede confundirse — hay que **mostrar el thinking** |
+
+---
+
+# No es blanco o negro
+
+<div class="text-center text-xl mt-4 mb-4 font-mono">
+
+Workflow ━━━━━━━━━━━━━━━━━━━━━━ Agente
+
+</div>
+
+<div class="text-center text-sm opacity-70 mb-8">
+
+↑ evidente · *("loguear síntoma")*   |   ↑ evidente · *("explica mi diagnóstico")*
+
+</div>
+
+Para arrancar, pregúntate: *"¿Qué decisión tiene que tomar mi sistema?"*
+
+- Si cabe en un `if/else` → **workflow**
+- Si cambia según el contexto → **agente**
 
 <v-click>
 
-### En hackatón: **empieza por workflow**.
+En la mayoría de casos, el extremo correcto es obvio.
 
-Solo pasa a agente cuando el workflow ya no te alcanza. La mayoría de demos ganadoras son workflows bien empaquetados.
+Pero **en salud, la zona gris aparece seguido**:
+- una decisión puede ser **clínica** (estructurada) y **conversacional** (ambigua) a la vez,
+- el input del paciente llega libre, pero la respuesta no puede serlo,
+- la auditabilidad pesa.
+
+Cuando te encuentres ahí, **no la sobrepienses**. El siguiente slide te va a sesgar.
 
 </v-click>
 
 ---
-
-# La caja de un agente · 4 componentes
-
-<div class="grid grid-cols-2 gap-4 mt-6">
-
-<div class="p-4 border rounded">
-
-### 🧠 Prompt
-- System prompt (rol, restricciones)
-- Few-shot (2-3 ejemplos)
-- Reglas de salida (formato)
-
-</div>
-
-<div class="p-4 border rounded">
-
-### 🔧 Tools
-- Funciones Python/TS expuestas
-- Schema claro (JSON)
-- Idempotentes si es posible
-
-</div>
-
-<div class="p-4 border rounded">
-
-### 💾 Memoria
-- Chat history (corto plazo)
-- Scratchpad (estado de la tarea)
-- RAG (conocimiento externo)
-
-</div>
-
-<div class="p-4 border rounded">
-
-### 🔁 Loop
-- Cuándo parar
-- Max iteraciones
-- Condición de éxito
-
-</div>
-
-</div>
-
+layout: center
+class: text-center
 ---
 
-# Azure AI Foundry · dónde encaja cada cosa
+# El insight contraintuitivo
 
-| Componente | En Foundry |
-|------------|------------|
-| Modelos (GPT-4o, o3, Llama) | **Foundry Models** |
-| Function calling / tools | **Foundry Agents** + tool definitions |
-| RAG sobre tus datos | **Azure AI Search** + indexers |
-| Evaluación de prompts | **Foundry evaluations** |
-| Deploy del agente | **Foundry endpoints** + Container Apps |
-| Observabilidad | **App Insights** + Foundry traces |
+<div class="text-xl mt-8 space-y-4">
+
+**Workflow** = óptimo, pero más código de orquestación.
+
+**Agente** = overkill, pero el **LLM se encarga de orquestar**.
+
+</div>
 
 <v-click>
 
-<div class="mt-4 text-sm opacity-70">
-  No tienes que usar <em>todo</em>. Para una demo: <strong>Models</strong> + 1-2 <strong>tools</strong> + <strong>AI Search</strong> si necesitas RAG. Listo.
+<div class="mt-12 text-2xl">
+
+En 48 horas, **"menos código que escribir"**<br/>gana a **"más óptimo en producción"**.
+
 </div>
 
 </v-click>
@@ -296,32 +309,63 @@ layout: section
 
 ---
 
-# Top 5 errores en hackatones de IA
+# Top 5 errores en hackatones de IA · salud
 
 1. **Construir features en lugar de la demo.**<br/>
-   <span class="opacity-70 text-sm">Cada feature que no se demuestra es horas perdidas.</span>
+   <span class="opacity-70 text-sm">Ya saben — solo recordatorio. Cada feature que no se demuestra es horas perdidas.</span>
 
-2. **Sobre-ingeniería del prompt.**<br/>
-   <span class="opacity-70 text-sm">300 líneas de system prompt = el modelo te ignora la mitad.</span>
+2. **Querer "datos médicos reales".**<br/>
+   <span class="opacity-70 text-sm">Pierden 8h limpiando datasets. <strong>Pattern:</strong> hardcodea 3-5 perfiles únicos → mini-agente "redactor" genera un pool con reglas de realismo. 30 min vs 8h.</span>
 
-3. **RAG cuando no se necesita.**<br/>
-   <span class="opacity-70 text-sm">¿Cabe el contexto en la ventana? Mete todo y ya.</span>
+3. **Multi-agente prematuro.**<br/>
+   <span class="opacity-70 text-sm">Empiecen mono-agente. Especialicen y dividan <strong>solo cuando el mono-agente colapse</strong>. Casi nunca colapsa en 48h.</span>
 
-4. **Múltiples agentes cuando uno basta.**<br/>
-   <span class="opacity-70 text-sm">"Orchestrator + 3 sub-agentes" = 4x debugging, 4x latencia.</span>
+4. **Olvidar al human-in-the-loop.**<br/>
+   <span class="opacity-70 text-sm">En salud, la IA no decide. <em>"El agente sugiere medicación, el médico aprueba con un click."</em> No es nice-to-have — es <strong>atribuibilidad de responsabilidad</strong>.</span>
 
 5. **Dejar el deploy para el final.**<br/>
-   <span class="opacity-70 text-sm">Despliega en la hora 6, no en la hora 47.</span>
+   <span class="opacity-70 text-sm">Despliega en la hora 12. No en la hora 47.</span>
 
 ---
 
 # Lo que SÍ ayuda
 
 - 👤 **Una sola persona dueña de la demo.** Decide qué entra y qué no.
-- 🎭 **Mock primero, datos reales después.** Construye el flujo con datos fake.
-- 🌳 **Trunk-based dev.** No hagas PRs entre ustedes. Commit directo a `main`.
+- 🎭 **Construye con dummies.** Hardcode + agente redactor donde necesites variedad.
+- 🌳 **Trunk-based dev.** No hagan PRs entre ustedes. Commit directo a `main`.
 - 📹 **Graba la demo en la hora 40.** Si el sistema falla en vivo, tienes el video.
-- ⏱️ **Ensaya el pitch en voz alta.** 3 veces mínimo. El tiempo importa.
+- ⏱️ **Ensaya el pitch en voz alta 3+ veces.** El tiempo importa.
+
+---
+layout: center
+class: text-center
+---
+
+# Recursos adicionales
+
+Repo público con código de ejemplo, snippets y patterns:
+
+<div class="mt-8 text-xl">
+
+👉 [github.com/moshe-exe/desafio-ia-bago-peru-2026-recursos](https://github.com/moshe-exe/desafio-ia-bago-peru-2026-recursos)
+
+</div>
+
+<div class="mt-8 text-left max-w-md mx-auto opacity-90">
+
+Incluye:
+- 🔌 Llamada básica al modelo (Python + Node)
+- 🛠️ Function calling / tool definition
+- 🤖 Mini-agente con loop
+- 🧪 Pattern: agente redactor de dummies
+
+</div>
+
+<div class="mt-6 text-sm opacity-60">
+
+*(Pendiente de publicar — link final en la versión aprobada de la presentación.)*
+
+</div>
 
 ---
 layout: center
@@ -334,21 +378,9 @@ class: text-center
 
 1. **Recorta el scope hasta que duela.**
 2. **Construye el demo path, no el producto.**
-3. **Despliega en la hora 6, no en la 47.**
+3. **Despliega en la hora 12, no en la 47.**
 
 </div>
-
----
-layout: center
-class: text-center
----
-
-# Recursos
-
-- [Slidev — slides as code](https://sli.dev/)
-- [Azure AI Foundry docs](https://learn.microsoft.com/azure/ai-foundry/)
-- [Anthropic — building effective agents](https://www.anthropic.com/research/building-effective-agents)
-- [OpenAI — prompt engineering guide](https://platform.openai.com/docs/guides/prompt-engineering)
 
 ---
 layout: center
@@ -361,6 +393,6 @@ class: text-center
 
 <div class="mt-8 text-lg">
 
-[github.com/moshe-exe](https://github.com/moshe-exe) · Agentman
+[github.com/moshe-exe](https://github.com/moshe-exe) · Agentman · Mentorium
 
 </div>
