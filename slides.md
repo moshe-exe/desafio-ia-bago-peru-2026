@@ -51,14 +51,12 @@ class: text-center
 
 <div class="text-3xl mt-8 mb-8">
 
-**Container local + API key de IA = mockup competente.**
+**Mockup competente en 48 horas.**
 
 </div>
 
 Lo demás es criterio.
 
----
-layout: section
 ---
 
 # Mapa del talk
@@ -68,12 +66,8 @@ layout: section
 3. **Los errores** — qué evitar
 
 ---
-layout: section
----
 
-# Parte 1 — El método
-
----
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 1 · El método</div>
 
 # La regla #1: recorta hasta que duela
 
@@ -93,6 +87,8 @@ layout: section
 
 ---
 
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 1 · El método</div>
+
 # Las 48 horas en 4 bloques
 
 | Bloque | Horas | Objetivo |
@@ -103,41 +99,32 @@ layout: section
 | **3. Demo + pitch** | 36 – 48h | UI presentable, **grabar video backup**, ensayar pitch 3 veces |
 
 ---
-layout: center
-class: text-center
----
 
-# Regla heurística
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 1 · El método</div>
 
-<div class="text-2xl mt-8">
+# Cuándo cambiar de rumbo
 
-> "Si en la hora 12 no tienes el end-to-end corriendo con dummies, **no es un problema de tecnología — es de scope**. No cambies de stack. Recorta más."
-
-</div>
-
----
-
-# Pivotar
-
-Cambiar la dirección de tu solución cuando descubres que la actual no va a llegar.
+**Dos checkpoints, dos reglas:**
 
 <v-click>
 
-**Duele.** Ya invertiste horas. Tu cerebro va a inventar razones para no hacerlo.
+**Hora 12 — ¿corre el end-to-end con dummies?**
+
+Si **NO** → no es problema de tecnología, es de **scope**. **Recorta más.** No cambies de stack.
 
 </v-click>
 
 <v-click>
 
-### Regla pragmática
+**Hora 24 — ¿la dirección sigue viable?**
 
-**Pivotar antes de la hora 24 es barato. Después es caro.**
+Si **NO** → **pivota.** Duele — ya invertiste horas — pero **pivotar antes de la hora 24 es barato. Después es caro.**
 
 </v-click>
 
 <v-click>
 
-<div class="mt-8 text-lg italic opacity-80">
+<div class="mt-8 text-lg italic opacity-80 text-center">
 
 No te enamores de la primera idea. **Enamórate del problema, no de la solución.**
 
@@ -148,6 +135,8 @@ No te enamores de la primera idea. **Enamórate del problema, no de la solución
 ---
 layout: two-cols
 ---
+
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 1 · El método</div>
 
 # Hardcode estratégico
 
@@ -172,12 +161,8 @@ layout: two-cols
 </div>
 
 ---
-layout: section
----
 
-# Parte 2 — La arquitectura
-
----
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
 
 # Stack mínimo · mockup en 48h
 
@@ -199,6 +184,8 @@ layout: section
 
 ---
 
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
+
 # Foundry — lo mínimo para 48h
 
 | Concepto | Qué es | Para qué lo tocas |
@@ -214,6 +201,8 @@ layout: section
 </div>
 
 ---
+
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
 
 # Foundry — CLI > Consola
 
@@ -233,6 +222,8 @@ az ai model deploy --model gpt-4o-mini --capacity 1
 
 ---
 
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
+
 # Agente vs Workflow · cómo se ve cada mockup
 
 | | **Workflow** | **Agente** |
@@ -243,6 +234,8 @@ az ai model deploy --model gpt-4o-mini --capacity 1
 | **Trampa** | Requiere pensar bien el flow antes de codear | Jurado puede confundirse — hay que **mostrar el thinking** |
 
 ---
+
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
 
 # No es blanco o negro
 
@@ -281,6 +274,8 @@ layout: center
 class: text-center
 ---
 
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
+
 # El insight contraintuitivo
 
 <div class="text-xl mt-8 space-y-4">
@@ -302,69 +297,21 @@ En 48 horas, **"menos código que escribir"**<br/>gana a **"más óptimo en prod
 </v-click>
 
 ---
-layout: section
----
 
-# Parte 3 — Los errores
+<div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 3 · Los errores</div>
 
----
+# Top errores · y cómo evitarlos
 
-# Top 5 errores en hackatones de IA · salud
+| ❌ Error | ✅ Cómo evitarlo |
+|----------|------------------|
+| Construir **features** en vez de la demo | **Una sola persona** dueña de la demo |
+| Querer **"datos médicos reales"** | **Dummies + agente redactor** (30 min vs 8h) |
+| **Multi-agente prematuro** | Empieza **mono-agente**, especializa después |
+| Olvidar al **human-in-the-loop** | *"El agente sugiere, el médico aprueba con un click"* |
+| **Deploy tarde** | **Deploy en la hora 12**, no en la 47 |
 
-1. **Construir features en lugar de la demo.**<br/>
-   <span class="opacity-70 text-sm">Ya saben — solo recordatorio. Cada feature que no se demuestra es horas perdidas.</span>
-
-2. **Querer "datos médicos reales".**<br/>
-   <span class="opacity-70 text-sm">Pierden 8h limpiando datasets. <strong>Pattern:</strong> hardcodea 3-5 perfiles únicos → mini-agente "redactor" genera un pool con reglas de realismo. 30 min vs 8h.</span>
-
-3. **Multi-agente prematuro.**<br/>
-   <span class="opacity-70 text-sm">Empiecen mono-agente. Especialicen y dividan <strong>solo cuando el mono-agente colapse</strong>. Casi nunca colapsa en 48h.</span>
-
-4. **Olvidar al human-in-the-loop.**<br/>
-   <span class="opacity-70 text-sm">En salud, la IA no decide. <em>"El agente sugiere medicación, el médico aprueba con un click."</em> No es nice-to-have — es <strong>atribuibilidad de responsabilidad</strong>.</span>
-
-5. **Dejar el deploy para el final.**<br/>
-   <span class="opacity-70 text-sm">Despliega en la hora 12. No en la hora 47.</span>
-
----
-
-# Lo que SÍ ayuda
-
-- 👤 **Una sola persona dueña de la demo.** Decide qué entra y qué no.
-- 🎭 **Construye con dummies.** Hardcode + agente redactor donde necesites variedad.
-- 🌳 **Trunk-based dev.** No hagan PRs entre ustedes. Commit directo a `main`.
-- 📹 **Graba la demo en la hora 40.** Si el sistema falla en vivo, tienes el video.
-- ⏱️ **Ensaya el pitch en voz alta 3+ veces.** El tiempo importa.
-
----
-layout: center
-class: text-center
----
-
-# Recursos adicionales
-
-Repo público con código de ejemplo, snippets y patterns:
-
-<div class="mt-8 text-xl">
-
-👉 [github.com/moshe-exe/desafio-ia-bago-peru-2026-recursos](https://github.com/moshe-exe/desafio-ia-bago-peru-2026-recursos)
-
-</div>
-
-<div class="mt-8 text-left max-w-md mx-auto opacity-90">
-
-Incluye:
-- 🔌 Llamada básica al modelo (Python + Node)
-- 🛠️ Function calling / tool definition
-- 🤖 Mini-agente con loop
-- 🧪 Pattern: agente redactor de dummies
-
-</div>
-
-<div class="mt-6 text-sm opacity-60">
-
-*(Pendiente de publicar — link final en la versión aprobada de la presentación.)*
-
+<div class="mt-6 text-sm opacity-70 text-center">
+  Otros: trunk-based dev · graba video backup en hora 40 · ensaya el pitch 3 veces
 </div>
 
 ---
@@ -390,6 +337,19 @@ class: text-center
 # Gracias
 
 ## ¿Preguntas?
+
+<div class="mt-8 text-base">
+
+📦 Código + patterns:<br/>
+[github.com/moshe-exe/desafio-ia-bago-peru-2026-recursos](https://github.com/moshe-exe/desafio-ia-bago-peru-2026-recursos)
+
+<div class="mt-2 text-xs opacity-60">
+
+*(disponible al cierre de la presentación)*
+
+</div>
+
+</div>
 
 <div class="mt-8 text-lg">
 
