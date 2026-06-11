@@ -110,12 +110,12 @@ class: text-left
 
 <div class="flex items-center gap-4">
   <IconBadge shape="squircle" size="md"><div class="i-ph:scissors" /></IconBadge>
-  <h1 class="!m-0">La regla #1: recorta hasta que duela</h1>
+  <h1 class="!m-0">La regla #1: recorta con cabeza</h1>
 </div>
 
 <div class="mt-8 mb-10">
 
-> Si después de recortar el scope no sientes que perdiste algo importante, **no recortaste lo suficiente**.
+> El miedo a perder algo te hace cargar con todo. Recortar con criterio — **aunque duela** — es lo que te deja avanzar.
 
 </div>
 
