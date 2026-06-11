@@ -73,6 +73,10 @@ layout: center
 class: text-center
 ---
 
+<div class="flex justify-center mb-6">
+  <IconBadge shape="squircle" size="lg"><div class="i-ph:target" /></IconBadge>
+</div>
+
 # El objetivo
 
 <div class="text-3xl mt-8 mb-8">
@@ -104,7 +108,10 @@ class: text-left
 
 <div class="h-full flex flex-col justify-center max-w-5xl">
 
-# La regla #1: recorta hasta que duela
+<div class="flex items-center gap-4">
+  <IconBadge shape="squircle" size="md"><div class="i-ph:scissors" /></IconBadge>
+  <h1 class="!m-0">La regla #1: recorta hasta que duela</h1>
+</div>
 
 <div class="mt-8 mb-10">
 
@@ -151,9 +158,12 @@ class: text-left
 
 <div class="h-full flex flex-col justify-center max-w-4xl">
 
-# Cuándo cambiar de rumbo
+<div class="flex items-center gap-4">
+  <IconBadge shape="squircle" size="md"><div class="i-ph:compass" /></IconBadge>
+  <h1 class="!m-0">Cuándo cambiar de rumbo</h1>
+</div>
 
-<div class="text-base opacity-60 mb-10">Dos checkpoints, dos reglas.</div>
+<div class="text-base opacity-60 mt-3 mb-10">Dos checkpoints, dos reglas.</div>
 
 <v-click>
 
@@ -203,7 +213,10 @@ No te enamores de la primera idea. **Enamórate del problema, no de la solución
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 1 · El método</div>
 
-# Hardcode estratégico
+<div class="flex items-center gap-4">
+  <IconBadge shape="squircle" size="md"><div class="i-ph:wrench" /></IconBadge>
+  <h1 class="!m-0">Hardcode estratégico</h1>
+</div>
 
 <div class="grid grid-cols-2 gap-12 mt-8">
 
@@ -343,7 +356,10 @@ layout: two-cols
 
 <div class="h-full flex flex-col justify-center pr-8">
 
-# No es blanco o negro
+<div class="flex items-center gap-4">
+  <IconBadge shape="squircle" size="md"><div class="i-ph:circle-half" /></IconBadge>
+  <h1 class="!m-0">No es blanco o negro</h1>
+</div>
 
 <div class="mt-8">
 
@@ -410,6 +426,10 @@ class: text-center
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
 
+<div class="flex justify-center mb-6">
+  <IconBadge shape="squircle" size="lg"><div class="i-ph:lightbulb" /></IconBadge>
+</div>
+
 # El insight contraintuitivo
 
 <div class="text-xl mt-8 space-y-4">
@@ -434,7 +454,10 @@ En 48 horas, **"menos código que escribir"**<br/>gana a **"más óptimo en prod
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 3 · Los errores</div>
 
-# Top errores · y cómo evitarlos
+<div class="flex items-center gap-4">
+  <IconBadge shape="squircle" size="md"><div class="i-ph:warning" /></IconBadge>
+  <h1 class="!m-0">Top errores · y cómo evitarlos</h1>
+</div>
 
 <div class="errors-table mt-8">
 
@@ -456,6 +479,10 @@ En 48 horas, **"menos código que escribir"**<br/>gana a **"más óptimo en prod
 layout: center
 class: text-center
 ---
+
+<div class="flex justify-center mb-6">
+  <IconBadge shape="squircle" size="lg"><div class="i-ph:lifebuoy" /></IconBadge>
+</div>
 
 # Las 3 reglas que te van a salvar
 
