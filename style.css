@@ -16,26 +16,13 @@
  * Added during the first /slides polish pass on this deck.
  * ============================================================ */
 
-/* Slide 1 — cover: title doesn't dominate (C4), deliberate title↔meta gap (C6),
- * meta in uniform weight (N1 — no bold-vs-muted mix on sibling pieces). */
-.cover-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 70vh;
-}
-.cover-block h1 {
-  font-size: 3.2rem;
-  line-height: 1.2;
+/* Slide 1 — cover: title doesn't dominate (C4). seriph defaults the cover h1
+ * to ~5rem, which fills >50% of the slide; cap it so the title reads as
+ * intentional, not "as big as possible". */
+.cover-slide h1 {
+  font-size: 3rem;
+  line-height: 1.25;
   margin: 0;
-}
-.cover-meta {
-  margin-top: 2.5rem;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
-  color: var(--c-fg);
-  opacity: 0.75;
 }
 
 /* Slide 7 — fixed column widths so wrap is consistent (C10 + N3). */

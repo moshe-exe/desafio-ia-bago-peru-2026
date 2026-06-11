@@ -12,7 +12,7 @@ transition: slide-left
 mdc: true
 ---
 
-<div class="h-full flex flex-col items-center justify-center text-center">
+<div class="cover-slide h-full flex flex-col items-center justify-center text-center">
 
 # Cómo construir un producto<br/>de IA Generativa en menos de 48 horas
 
