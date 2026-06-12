@@ -354,64 +354,33 @@ Notas (orador): Dos reglas con G&S —
 | | **Workflow** | **Agente** |
 |---|---|---|
 | **UI típica** | Formularios, botones, stepper "paso 2/4" | Chat libre + panel "thinking..." con tool calls |
-| **Ejemplo healthcare** | Paciente loguea síntoma → eval contra reglas → respuesta | Médico pide *"resúmeme la última consulta"* → agente decide tools |
-| **Cómo se ve la demo** | "Primero X, luego Y" — jurado entiende fácil | El "wow" es mostrar el razonamiento en vivo |
-| **Trampa** | Requiere pensar bien el flow antes de codear | Jurado puede confundirse — hay que **mostrar el thinking** |
+| **Ejemplo healthcare** | Cuestionario de 5 síntomas → puntaje → semáforo verde / amarillo / rojo | Médico pide *"resúmeme la última consulta"* → agente decide tools |
+| **Dónde está el wow** | En el **resultado**: fluido, predecible, sin sorpresas | En el **proceso**: ver cómo razona y decide en vivo |
+| **Trampa** | Requiere pensar bien el flow antes de codear | Un chat diluye el propósito: depende de quién lo use. Sin guía, parece *"solo un chatbot"* y no se nota lo que realmente hace |
 
 ---
-layout: two-cols
+layout: center
 ---
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
 
-<div class="h-full flex flex-col justify-center pr-8">
-
-<div class="flex items-center gap-4">
+<div class="flex items-center gap-4 justify-center mb-16">
   <IconBadge shape="squircle" size="md"><div class="i-ph:circle-half" /></IconBadge>
   <h1 class="!m-0">No es blanco o negro</h1>
 </div>
 
-<div class="mt-8">
+<div class="max-w-3xl mx-auto">
 
-<div class="flex items-center text-lg font-mono">
+<div class="flex items-center text-2xl font-mono mb-16">
   <span class="font-bold">Workflow</span>
-  <div class="flex-1 mx-3 border-t-2 border-current opacity-60"></div>
+  <div class="flex-1 mx-4 border-t-2 border-current opacity-50"></div>
   <span class="font-bold">Agente</span>
 </div>
 
-<div class="mt-2 flex justify-between text-xs opacity-70 italic">
-  <span>("loguear síntoma")</span>
-  <span>("explica mi diagnóstico")</span>
-</div>
+En la mayoría de casos, el extremo correcto es obvio.<br/>
+Pero **en salud, la zona gris aparece seguido**:
 
-</div>
-
-<div class="mt-10">
-
-Pregúntate: *"¿Qué decisión tiene que tomar mi sistema?"*
-
-<div class="mt-3 space-y-1">
-
-- Si cabe en un `if/else` → **workflow**
-- Si cambia según el contexto → **agente**
-
-</div>
-
-</div>
-
-</div>
-
-::right::
-
-<v-click>
-
-<div class="h-full flex flex-col justify-center pl-8 text-sm space-y-3">
-
-<div class="text-xs uppercase tracking-widest opacity-60">La zona gris (en salud)</div>
-
-En la mayoría de casos, el extremo correcto es obvio. Pero **en salud, la zona gris aparece seguido**:
-
-<div class="space-y-1">
+<div class="mt-4 space-y-1 opacity-90">
 
 - una decisión puede ser **clínica** (estructurada) y **conversacional** (ambigua) a la vez,
 - el input del paciente llega libre, pero la respuesta no puede serlo,
@@ -419,15 +388,13 @@ En la mayoría de casos, el extremo correcto es obvio. Pero **en salud, la zona 
 
 </div>
 
-<div class="italic opacity-85">
-
-Cuando te encuentres ahí, **no la sobrepienses**. El siguiente slide te va a sesgar.
-
 </div>
 
-</div>
-
-</v-click>
+<!--
+Notas (orador):
+- Regla rápida: ¿qué decisión toma el sistema? Si cabe en un if/else → workflow. Si cambia según el contexto → agente.
+- En la zona gris no la sobrepienses: el siguiente slide te va a sesgar (en 48h el agente gana por menos código).
+-->
 
 ---
 layout: center
@@ -437,26 +404,38 @@ class: text-center
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
 
 <div class="flex justify-center mb-6">
-  <IconBadge shape="squircle" size="lg"><div class="i-ph:lightbulb" /></IconBadge>
+  <IconBadge shape="squircle" size="lg"><div class="i-ph:scales" /></IconBadge>
 </div>
 
-# El insight contraintuitivo
+# Encontrando el balance
 
-<div class="text-xl mt-8 space-y-4">
-
-**Workflow** = óptimo, pero más código de orquestación.
-
-**Agente** = overkill, pero el **LLM se encarga de orquestar**.
-
+<div class="max-w-3xl mx-auto mt-10">
+  <div class="flex items-center text-2xl font-mono">
+    <span class="font-bold">Workflow</span>
+    <div class="flex-1 mx-4 border-t-2 border-current opacity-50"></div>
+    <span class="font-bold">Agente</span>
+  </div>
+  <div class="flex justify-between text-base opacity-70 mt-2">
+    <span>estructura</span>
+    <span>libertad</span>
+  </div>
 </div>
 
 <v-click>
 
-<div class="mt-12 text-2xl">
+<div class="text-xl mt-12 max-w-2xl mx-auto">
 
-En 48 horas, **"menos código que escribir"**<br/>gana a **"más óptimo en producción"**.
+La mejor solución no es un chatbot suelto ni un workflow rígido. Es la que **combina lo mejor de cada uno**.
 
 </div>
+
+</v-click>
+
+<v-click>
+
+<div class="mt-10 text-2xl font-bold">Lo adecuado no es lo complejo, es lo bien diseñado.</div>
+
+<div class="mt-3 text-lg opacity-80">Y diseñar bien empieza por entender el problema.</div>
 
 </v-click>
 
@@ -473,7 +452,7 @@ En 48 horas, **"menos código que escribir"**<br/>gana a **"más óptimo en prod
 
 | <span class="th-err">Error</span> | <span class="th-fix">Cómo evitarlo</span> |
 |----------|------------------|
-| Construir **features** en vez de la demo | **Una sola persona** dueña de la demo |
+| Construir **features** en vez de la demo | Por cada cosa pregúntate: *¿aparece en la demo?* Si no, no la construyas |
 | Querer **"datos médicos reales"** | **Dummies + agente redactor** (30 min vs 8h) |
 | **Multi-agente prematuro** | Empieza **mono-agente**, especializa después |
 | Olvidar al **human-in-the-loop** | *"El agente sugiere, el médico aprueba con un click"* |
@@ -543,23 +522,26 @@ class: text-center
 
 # Gracias
 
-<div class="mt-6 text-2xl opacity-80">¿Preguntas?</div>
+<div class="mt-2 text-2xl opacity-80">¿Preguntas?</div>
 
-<div class="mt-16 text-base">
+<div class="mt-12 grid grid-cols-3 gap-8 max-w-5xl mx-auto">
 
-Toolkit + skill de Claude para Foundry<br/>
-[github.com/moshe-exe/ai-mockup-quickstart](https://github.com/moshe-exe/ai-mockup-quickstart)
+  <div class="flex flex-col items-center gap-3">
+    <div class="text-lg font-semibold text-primary">LinkedIn</div>
+    <img src="./assets/qr/linkedin-moshe.svg" class="w-36 rounded-2xl ring-1 ring-[#AD096B]/40 shadow-md" />
+    <a href="https://www.linkedin.com/in/moshe-ojeda/" class="text-xs opacity-70 break-words leading-tight">linkedin.com/in/moshe-ojeda</a>
+  </div>
 
-</div>
+  <div class="flex flex-col items-center gap-3">
+    <div class="text-lg font-semibold text-primary">AI Mockup QuickStart</div>
+    <img src="./assets/qr/ai-mockup-quickstart.svg" class="w-36 rounded-2xl ring-1 ring-[#AD096B]/40 shadow-md" />
+    <a href="https://github.com/moshe-exe/ai-mockup-quickstart" class="text-xs opacity-70 break-words leading-tight">github.com/moshe-exe/ai-mockup-quickstart</a>
+  </div>
 
-<div class="mt-10 text-lg">
-
-[github.com/moshe-exe](https://github.com/moshe-exe)
-
-</div>
-
-<div class="mt-4 text-base opacity-80">
-
-Agentman · Mentorium
+  <div class="flex flex-col items-center gap-3">
+    <div class="text-lg font-semibold text-primary">Slide Creator Skill</div>
+    <img src="./assets/qr/slide-creator-skill.svg" class="w-36 rounded-2xl ring-1 ring-[#AD096B]/40 shadow-md" />
+    <a href="https://github.com/moshe-exe/claude-slide-creator-skill" class="text-xs opacity-70 break-words leading-tight">github.com/moshe-exe/claude-slide-creator-skill</a>
+  </div>
 
 </div>
