@@ -333,9 +333,7 @@ az extension add -n cognitiveservices
 ::right::
 
 <div class="h-full flex flex-col items-center justify-center">
-  <div class="w-60 h-60 border-2 border-dashed border-current opacity-40 flex items-center justify-center rounded-xl">
-    <span class="text-sm opacity-60">QR aquí</span>
-  </div>
+  <img src="./assets/qr/ai-mockup-quickstart.svg" class="w-60 rounded-2xl ring-1 ring-[#AD096B]/40 shadow-md" />
   <div class="mt-4 text-sm opacity-70">Escanea para el toolkit</div>
 </div>
 
@@ -475,42 +473,21 @@ class: text-center
 
 # Las 3 reglas que te van a salvar
 
-<div class="mt-12 text-left max-w-3xl mx-auto space-y-10">
+<div class="mt-12 text-left max-w-3xl mx-auto space-y-8">
 
 <div>
-
-**1. Recorta con cabeza, aunque duela.**
-
-<div class="text-base opacity-80 mt-1 pl-6">
-
-El miedo al dolor no es razón para no decidir bien.
-
-</div>
-
+  <div class="font-bold">1. Recorta con cabeza, aunque duela.</div>
+  <div class="text-base opacity-80 mt-1 pl-6">El miedo al dolor no es razón para no decidir bien.</div>
 </div>
 
 <div>
-
-**2. Tu demo es lo que sobrevive al recorte.**
-
-<div class="text-base opacity-80 mt-1 pl-6">
-
-Construye eso, nada más.
-
-</div>
-
+  <div class="font-bold">2. Tu demo es lo que sobrevive al recorte.</div>
+  <div class="text-base opacity-80 mt-1 pl-6">Construye eso, nada más.</div>
 </div>
 
 <div>
-
-**3. El deploy de la hora 12 no es para mostrar.**
-
-<div class="text-base opacity-80 mt-1 pl-6">
-
-Es para descubrir lo que no funciona mientras todavía hay tiempo.
-
-</div>
-
+  <div class="font-bold">3. El deploy de la hora 12 no es para mostrar.</div>
+  <div class="text-base opacity-80 mt-1 pl-6">Es para descubrir lo que no funciona mientras todavía hay tiempo.</div>
 </div>
 
 </div>
