@@ -8,4 +8,9 @@ dist
 
 # Output exports
 *.pdf
+*.pptx
 !docs/**/*.pdf
+!docs/**/*.pptx
+
+# Polish/illustrate intermediate screenshot exports
+polish/after-raw/
