@@ -79,11 +79,13 @@ class: text-center
 
 # El objetivo
 
-<div class="text-3xl mt-8 mb-8">
+<div class="text-3xl mt-8 mb-2">
 
-**Mockup competente en 48 horas.**
+~~Un producto.~~ **Un mockup sólido.**
 
 </div>
+
+<div class="text-lg opacity-70 mb-8">en 48 horas</div>
 
 Lo demás es criterio.
 
@@ -92,13 +94,13 @@ layout: center
 class: text-left
 ---
 
-# Mapa del talk
+# Mapa de la charla
 
 <div class="mt-10 pl-6 space-y-5 text-lg">
 
-1. **El método** — cómo organizar las 48h
-2. **La arquitectura** — qué construir
-3. **Los errores** — qué evitar
+1. **El método** → cómo organizar las 48h
+2. **La arquitectura** → qué construir
+3. **Los errores** → qué evitar
 
 </div>
 
@@ -115,7 +117,7 @@ class: text-left
 
 <div class="mt-8 mb-10">
 
-> El miedo a perder algo te hace cargar con todo. Recortar con criterio — **aunque duela** — es lo que te deja avanzar.
+> El miedo a perder algo te hace cargar con todo. Recortar con criterio, **aunque duela**, es lo que te deja avanzar.
 
 </div>
 
@@ -146,9 +148,9 @@ class: text-left
 | Bloque | Horas | Objetivo |
 |--------|-------|----------|
 | **0. Decidir** | 0 – 4h | Reto elegido, "demo line" en una oración, lista explícita de lo que **NO** van a construir |
-| **1. Esqueleto** | 4 – 20h | Container local + API + LLM + UI mínima → **end-to-end con dummies**, todo hardcoded. **Deploy en la hora 12.** |
-| **2. Pulir lógica** | 20 – 36h | Iterar el corazón de la interacción (prompts, tools, flujo). Calidad solo sobre el *happy path*. |
-| **3. Demo + pitch** | 36 – 48h | UI presentable, **grabar video backup**, ensayar pitch 3 veces |
+| **1. Esqueleto** | 4 – 20h | **UI + LLM** (atados con API, container local) → **end-to-end con dummies**, hardcoded. **Deploy en la hora 12.** |
+| **2. Pulir lógica** | 20 – 36h | Iterar **el corazón de tu solución** (flujo, prompts, tools, contexto). Calidad solo sobre el *happy path*. |
+| **3. Demo + pitch** | 36 – 48h | **UI/UX**, grabar video backup, ensayar pitch 3 veces |
 
 </div>
 
@@ -258,9 +260,9 @@ No te enamores de la primera idea. **Enamórate del problema, no de la solución
 
 | Capa | Qué usar |
 |------|----------|
-| **Frontend** | Lo más simple — Streamlit, una página HTML, lo que sea |
-| **Backend** | FastAPI o Express en container local |
-| **LLM** | `gpt-4o-mini` en Azure AI Foundry |
+| **Frontend** | Con lo que te sientas cómodo: Streamlit, Next.js, HTML simple |
+| **Backend** | FastAPI (Python) o las API routes de Next.js (Node) |
+| **LLM** | `gpt-5.4-mini` en Azure AI Foundry |
 | **Datos** | Dummies en JSON / SQLite / archivos |
 | **Deploy** | Local primero. Azure Container Apps si llegan. |
 
@@ -278,12 +280,12 @@ No te enamores de la primera idea. **Enamórate del problema, no de la solución
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
 
-# Foundry — lo mínimo para 48h
+# Foundry · lo esencial
 
 | Concepto | Qué es | Para qué lo tocas |
 |----------|--------|-------------------|
-| **Project** | Contenedor de recursos | Tu workspace — uno por equipo |
-| **Model** | Un LLM disponible (gpt-4o, gpt-4o-mini, o3-mini) | Eliges cuál deployar (recomiendo gpt-4o-mini) |
+| **Project** | Contenedor de recursos | Tu workspace, uno por equipo |
+| **Model** | Un LLM disponible (gpt-5.4, gpt-5.4-mini, gpt-5.4-nano) | Eliges cuál deployar (recomiendo gpt-5.4-mini) |
 | **Deployment** | Un model con endpoint + quota | Lo que llamas desde tu código con la API key |
 | **Connection** | Link a otro recurso | Solo si usan AI Search o Blob. Si no, no la toquen. |
 | **AI Search** | Index vectorial as-a-service | Overkill en 48h. Pásenle los datos directamente al modelo. |
@@ -293,47 +295,55 @@ No te enamores de la primera idea. **Enamórate del problema, no de la solución
 </div>
 
 ---
+layout: two-cols
+layoutClass: gap-8
+---
 
 <div class="abs-tr m-4 text-xs opacity-40 font-mono">Parte 2 · La arquitectura</div>
 
-# Foundry — CLI > Consola
+# Foundry · CLI > Consola
 
-<div class="mt-6 space-y-2">
+<div class="mt-6 space-y-4">
 
 La consola está hecha para clickear. **En 48h, cada click te quita 15 segundos.**
 
-¿No dominan `az`? **Pídanselo a un agente de código** — Claude, Cursor o Copilot lo manejan por ustedes.
+<div>
+
+¿No dominan `az`?
+
+**Pídanselo a un agente de código.** Claude, Cursor o Copilot lo manejan por ustedes.
 
 </div>
 
-<div class="mt-10">
+</div>
 
 ```bash
 az login
 az extension add -n cognitiveservices
-# crear resource group → Foundry → deployar gpt-4o-mini
+# crear resource group → Foundry → deployar gpt-5.4-mini
 ```
 
-<div class="mt-2 text-sm opacity-90">
+<div class="mt-6 text-lg">
 
-Snippet completo + skill de Claude para Foundry: [**github.com/moshe-exe/ai-mockup-quickstart**](https://github.com/moshe-exe/ai-mockup-quickstart)
-
-</div>
-
-</div>
-
-<div class="mt-12">
-
-<div class="text-sm uppercase tracking-widest opacity-60">Dos reglas con G&S</div>
-
-<div class="mt-3 space-y-2">
-
-1. **Quota, permisos, accesos → al inge de G&S.** No peleen con la consola.
-2. **Todo lo creativo → CLI o SDK.**
+📦 Snippet completo + skill de Claude para Foundry:<br/>
+[**github.com/moshe-exe/ai-mockup-quickstart**](https://github.com/moshe-exe/ai-mockup-quickstart)
 
 </div>
 
+::right::
+
+<div class="h-full flex flex-col items-center justify-center">
+  <div class="w-60 h-60 border-2 border-dashed border-current opacity-40 flex items-center justify-center rounded-xl">
+    <span class="text-sm opacity-60">QR aquí</span>
+  </div>
+  <div class="mt-4 text-sm opacity-70">Escanea para el toolkit</div>
 </div>
+
+<!--
+Notas (orador): Dos reglas con G&S —
+1) Quota, permisos, accesos → al inge de Azure (G&S) presente. No peleen con la consola.
+2) Todo lo creativo (modelos, prompts, lógica) → CLI o SDK.
+-->
 
 ---
 
