@@ -16,13 +16,28 @@
  * Added during the first /slides polish pass on this deck.
  * ============================================================ */
 
-/* Slide 1 — cover: title doesn't dominate (C4). seriph defaults the cover h1
- * to ~5rem, which fills >50% of the slide; cap it so the title reads as
- * intentional, not "as big as possible". */
+/* Slide 1 — cover: 3-level title hierarchy.
+ * h1 (main) > tagline "en menos de 48 horas" (mid) > meta (small).
+ * h1 capped so it doesn't dominate (C4); shorter now that "en menos de
+ * 48 horas" lives in the tagline, so it balances to 2 lines. */
 .cover-slide h1 {
-  font-size: 3rem;
+  font-size: 2.6rem;
   line-height: 1.25;
   margin: 0;
+  max-width: 26ch;
+  text-wrap: balance;
+}
+.cover-tagline {
+  margin-top: 0.75rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--c-primary-dk);
+}
+.cover-meta {
+  margin-top: 2.5rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
 }
 
 /* Slide 7 — fixed column widths so wrap is consistent (C10 + N3). */

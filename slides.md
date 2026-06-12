@@ -14,9 +14,17 @@ mdc: true
 
 <div class="cover-slide h-full flex flex-col items-center justify-center text-center">
 
-# Cómo construir un producto<br/>de IA Generativa en menos de 48 horas
+<div class="flex gap-5 mb-10">
+  <IconBadge shape="squircle" size="lg"><div class="i-ph:timer" /></IconBadge>
+  <IconBadge shape="squircle" size="lg"><div class="i-ph:heartbeat" /></IconBadge>
+  <IconBadge shape="squircle" size="lg"><div class="i-ph:asterisk" /></IconBadge>
+</div>
 
-<div class="mt-10 text-lg opacity-75 tracking-wide">
+# Cómo construir un producto de IA Generativa
+
+<div class="cover-tagline">en menos de 48 horas</div>
+
+<div class="cover-meta">
 
 Desafío IA Bagó Perú 2026 · Moshe Ojeda · 12 jun 2026
 
