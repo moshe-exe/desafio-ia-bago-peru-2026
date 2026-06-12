@@ -17,7 +17,7 @@ mdc: true
 <div class="flex gap-5 mb-10">
   <IconBadge shape="squircle" size="lg"><div class="i-ph:timer" /></IconBadge>
   <IconBadge shape="squircle" size="lg"><div class="i-ph:heartbeat" /></IconBadge>
-  <IconBadge shape="squircle" size="lg"><div class="i-ph:asterisk" /></IconBadge>
+  <IconBadge shape="squircle" size="lg"><div class="i-ph:intersect" /></IconBadge>
 </div>
 
 # Cómo construir un producto de IA Generativa
